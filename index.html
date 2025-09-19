@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Principle Robotics</title>
+  <meta name="description" content="Principle Robotics — building practical robotics with principled engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0f14;--fg:#e7edf6;--muted:#9fb3c8;--card:#121824;--accent:#5ee1a0;--accent2:#7aa6ff;--danger:#ff7a7a}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.8);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.3px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    .nav a{margin-left:18px;color:var(--fg);opacity:.9}
+    .nav a.active{color:var(--accent)}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#091018;font-weight:700;border:none}
+    .btn:hover{filter:brightness(1.05)}
+    .hero{padding:90px 0 70px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero h1{font-size:44px;line-height:1.05;margin:0 0 14px}
+    .hero p{font-size:18px;color:var(--muted);max-width:720px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:20px}
+    .section{padding:70px 0}
+    h2{font-size:30px;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+    .kpi{padding:18px;border-radius:14px;background:#0f1521;border:1px solid rgba(255,255,255,.06)}
+    .kpi strong{font-size:28px}
+    /* About */
+    .about-cols{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+    /* Collabs */
+    .logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px}
+    .logo{background:#0f1521;border:1px dashed rgba(255,255,255,.12);border-radius:12px;height:72px;display:flex;align-items:center;justify-content:center;color:#9db2cf}
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0f1521;color:var(--fg)}
+    input::placeholder,textarea::placeholder{color:#8094ad}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .note{font-size:14px;color:var(--muted)}
+    .success{display:none;margin-top:10px;color:#0ddb9a}
+    .error{display:none;margin-top:10px;color:var(--danger)}
+    footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+    @media (max-width:900px){.about-cols{grid-template-columns:1fr}.hero h1{font-size:36px}.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span> Principle Robotics</div>
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#collaborations">Collaborations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Landing / Home -->
+  <main id="home" class="hero">
+    <div class="container">
+      <div class="grid">
+        <div class="card" style="grid-column:span 7">
+          <h1>Robotics, built on principles.</h1>
+          <p>We design and deploy practical robotic systems for real‑world use—guided by rigorous engineering and fast iteration. From concept to field‑ready, we deliver the full stack.</p>
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn" href="#contact">Get in touch</a>
+            <a href="#collaborations">See collaborations →</a>
+          </div>
+        </div>
+        <div class="card" style="grid-column:span 5">
+          <h3 style="margin-top:0">What we do</h3>
+          <ul class="muted" style="line-height:1.8">
+            <li>Autonomy & controls for mobile platforms</li>
+            <li>Perception pipelines (vision + LiDAR)</li>
+            <li>Embedded, edge, and cloud software</li>
+            <li>Build, test, and deployment operations</li>
+          </ul>
+          <div class="kpis" style="margin-top:10px">
+            <div class="kpi"><strong>4</strong><div class="muted">Team members</div></div>
+            <div class="kpi"><strong>10+</strong><div class="muted">Platforms shipped</div></div>
+            <div class="kpi"><strong>3</strong><div class="muted">Active pilots</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container about-cols">
+      <div>
+        <h2>About us</h2>
+        <p class="muted">Principle Robotics is a small team focused on building useful robots, quickly and safely. We combine academic rigor with pragmatic engineering to deliver reliable systems.</p>
+        <ul class="muted" style="line-height:1.9">
+          <li>Experience across autonomy, perception, and mechatronics</li>
+          <li>Lean prototyping with a clear path to production</li>
+          <li>Transparent communication and shared roadmaps</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card">
+          <h3 style="margin-top:0">Core principles</h3>
+          <ol class="muted" style="line-height:1.9">
+            <li>Ship small, iterate fast</li>
+            <li>Design for reliability from day one</li>
+            <li>Measure everything; automate where it matters</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaborations -->
+  <section id="collaborations" class="section" aria-labelledby="collab-heading">
+    <div class="container">
+      <h2 id="collab-heading">Collaborations</h2>
+      <p class="muted">We partner with research labs, startups, and operators. Interested in a pilot or joint development? Let’s talk.</p>
+      <div class="logo-grid" style="margin-top:14px">
+        <div class="logo">Partner Logo</div>
+        <div class="logo">Partner Logo</div>
+        <div class="logo">Partner Logo</div>
+        <div class="logo">Partner Logo</div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <strong>Collab formats</strong>
+        <ul class="muted" style="line-height:1.9;margin:10px 0 0">
+          <li>Exploration sprint (1–2 weeks) to scope opportunities</li>
+          <li>Pilot deployment with defined KPIs</li>
+          <li>Joint R&D with shared IP terms</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="muted">Use the form below or email <a href="mailto:accounts@principlerobotics.com">accounts@principlerobotics.com</a>.</p>
+
+      <form id="contactForm" method="POST" action="mailto:accounts@principlerobotics.com">
+        <!-- Replace the action URL above with your Formspree endpoint -->
+        <div class="row">
+          <div>
+            <label for="name" class="muted">Name</label>
+            <input id="name" name="name" type="text" placeholder="Full name" required />
+          </div>
+          <div>
+            <label for="email" class="muted">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div>
+          <label for="message" class="muted">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="How can we help?" required></textarea>
+        </div>
+        <!-- Bot field -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="_subject" value="New inquiry from principlerobotics.com" />
+        <button class="btn" type="submit">Send message</button>
+        <div class="note">We typically reply within 1–2 business days.</div>
+        <div id="success" class="success" role="status">Thanks! Your message was sent.</div>
+        <div id="error" class="error" role="alert">Hmm, something went wrong. Please try again or email us directly.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Principle Robotics</div>
+      <div class="muted">Built with GitHub Pages</div>
+    </div>
+  </footer>
+
+  <script>
+    // Active nav link on scroll
+    const links = document.querySelectorAll('header nav a');
+    const sections = [...document.querySelectorAll('main, section')];
+    const byId = id => document.querySelector(id);
+    const setActive = id => links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ setActive('#' + entry.target.id); }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    sections.forEach(s => observer.observe(s));
+
+    // Contact form submit\n    const form = document.getElementById('contactForm');\n    const ok = document.getElementById('success');\n    const err = document.getElementById('error');\n    form.addEventListener('submit', (e)=>{\n      // Mailto fallback — opens the user's email client with a prefilled message.\n      e.preventDefault();\n      ok.style.display = 'none';\n      err.style.display = 'none';\n      const name = encodeURIComponent(document.getElementById('name').value.trim());\n      const email = encodeURIComponent(document.getElementById('email').value.trim());\n      const message = encodeURIComponent(document.getElementById('message').value.trim());\n      const subject = encodeURIComponent('New inquiry from principlerobotics.com');\n      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(email)}\n\nMessage:\n${decodeURIComponent(message)}`);\n      const mailto = `mailto:hello@principlerobotics.com?subject=${subject}&body=${body}`;\n      window.location.href = mailto;\n      // Show a gentle hint in case the mail client didn't open.\n      setTimeout(()=>{\n        ok.textContent = 'If your email client did not open, email us at hello@principlerobotics.com.';\n        ok.style.display = 'block';\n      }, 1000);\n    });\n\n    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
